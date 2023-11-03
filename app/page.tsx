@@ -1,5 +1,7 @@
 import AcmeLogo from '@/app/ui/acme-logo';
 import styles from '@/app/ui/home.module.css';
+import { arapey } from './ui/fonts';
+import Image from 'next/image';
 
 import Link from 'next/link';
 export default function Page() {
@@ -11,8 +13,8 @@ export default function Page() {
       </div>
       <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
         <div className="flex flex-col justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10 md:w-2/5 md:px-20">
-          <p className={`text-xl text-gray-800 md:text-3xl md:leading-normal`}>
-            <strong>Welcome to Acme.</strong> This is the example for the{' '}
+          <p className={`${arapey.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}>
+            <strong>Welcome to Course.</strong> This is the example for the{' '}
             <a href="https://nextjs.org/learn/" className="text-blue-500">
               Next.js Learn Course
             </a>
@@ -27,6 +29,20 @@ export default function Page() {
         </div>
         <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
           {/* Add Hero Images Here */}
+          <Image 
+            height={760}
+            width={1000} 
+            alt='Screenshot of the dashboard' 
+            src='/hero-desktop.png' 
+            className='hidden md:block'
+          />
+          <Image 
+            height={620}
+            width={560} 
+            alt='Screenshot of the dashboard' 
+            src='/hero-mobile.png' 
+            className='block md:hidden'
+          />
         </div>
       </div>
     </main>
